@@ -1,5 +1,36 @@
 %YAML 1.1
 %TAG !u! tag:unity3d.com,2011:
+--- !u!1 &89201711667456087
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 853056956745322642}
+  m_Layer: 6
+  m_Name: HoldPoint
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &853056956745322642
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 89201711667456087}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 1.275, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 5134189883475465890}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1001 &1134106297524021302
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -258,6 +289,10 @@ PrefabInstance:
         type: 3}
       insertIndex: -1
       addedObject: {fileID: 3462376052701957277}
+    - targetCorrespondingSourceObject: {fileID: 3554312384950518014, guid: 0decfef3f2114c449becabedf5ae41a6,
+        type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 853056956745322642}
     m_AddedComponents:
     - targetCorrespondingSourceObject: {fileID: 5603515404097501216, guid: 0decfef3f2114c449becabedf5ae41a6,
         type: 3}
@@ -282,7 +317,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3a8f9945de04c2443b4497bbc29e251a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  holdPoint: {fileID: 853056956745322642}
   selectedCounter: {fileID: 3462376052701957276}
+  garnishSO: {fileID: 0}
+  transferTargetCounter: {fileID: 0}
+  testing: 0
 --- !u!4 &5134189883475465890 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 3554312384950518014, guid: 0decfef3f2114c449becabedf5ae41a6,
