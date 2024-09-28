@@ -1,6 +1,7 @@
 using System;
 using System.Collections;
 using System.Collections.Generic;
+using Unity.VisualScripting;
 using UnityEngine;
 
 public class Player : GarnishItemHolder
@@ -10,9 +11,16 @@ public class Player : GarnishItemHolder
     [SerializeField] private GameInput gameInput;
     [SerializeField] private LayerMask counterLayerMask;
 
+    public static Player Instance { get; private set; }
+
     private bool isWalking = false;
     private Vector3 direction;
-    private ClearCounter selectedCounter;
+    private BaseCounter selectedCounter;
+
+    private void Awake() 
+    {
+        Instance = this;
+    }
 
     private void Start() 
     {
@@ -40,7 +48,7 @@ public class Player : GarnishItemHolder
 
     private void GameInput_OnInteractAction(object sender, EventArgs e)
     {
-        selectedCounter?.Interact();
+        selectedCounter?.Interact(this);
     }
 
     private void HandleMovement()
@@ -62,7 +70,7 @@ public class Player : GarnishItemHolder
     {
         if (Physics.Raycast(transform.position, transform.forward, out RaycastHit hitinfo, 2f, counterLayerMask))
         {
-            if(hitinfo.transform.TryGetComponent<ClearCounter>(out ClearCounter counter))
+            if(hitinfo.transform.TryGetComponent<BaseCounter>(out BaseCounter counter))
             {
                 // counter.Interact();
                 SetSelectedCounter(counter);
@@ -78,7 +86,7 @@ public class Player : GarnishItemHolder
         }
     }
 
-    public void SetSelectedCounter(ClearCounter counter)
+    public void SetSelectedCounter(BaseCounter counter)
     {
         if (counter != selectedCounter)
             selectedCounter?.CancelSelect();

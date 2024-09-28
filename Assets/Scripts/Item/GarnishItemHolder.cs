@@ -14,6 +14,11 @@ public class GarnishItemHolder : MonoBehaviour
         return holdPoint;
     }
 
+    public bool IsHaveGranishItem()
+    {
+        return garnishItem != null;
+    }
+
     public void SetGarnishItem(GarnishItem garnishItem)
     {
         this.garnishItem = garnishItem;
@@ -25,21 +30,21 @@ public class GarnishItemHolder : MonoBehaviour
         return garnishItem;
     }
 
-    public void TransferGarnishItem(ClearCounter sourceCounter, ClearCounter targetCounter)
+    public void TransferGarnishItem(GarnishItemHolder sourceHolder, GarnishItemHolder targetHolder)
     {
-        if (sourceCounter.GetGarnishItem() == null)
+        if (sourceHolder.GetGarnishItem() == null)
         {
-            Debug.LogWarning("原柜台不存在食材,转移失败。");
+            Debug.LogWarning("原持有者不存在食材,转移失败。");
             return;
         }
-        if (targetCounter.GetGarnishItem() != null)
+        if (targetHolder.GetGarnishItem() != null)
         {
-            Debug.LogWarning("目标柜台存在食材,转移失败。");
+            Debug.LogWarning("目标持有者存在食材,转移失败。");
             return;
         }
 
-        targetCounter.AddGarnishItem(sourceCounter.GetGarnishItem());
-        sourceCounter.ClearGarnishItem();
+        targetHolder.AddGarnishItem(sourceHolder.GetGarnishItem());
+        sourceHolder.ClearGarnishItem();
     }
 
     public void AddGarnishItem(GarnishItem garnishItem)
