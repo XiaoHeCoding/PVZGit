@@ -7,7 +7,7 @@ public class ContainerCounter : BaseCounter
 {
     [SerializeField] private Garnish_SO garnishSO;
 
-    [SerializeField] private ContainerCounterVisual containerCounterVisual;
+    [SerializeField] private ContainerAnim containerCounterVisual;
     
     
     public override void Interact(Player player)
@@ -20,10 +20,6 @@ public class ContainerCounter : BaseCounter
         containerCounterVisual.PlayOpen();
     }
 
-    public void CreatGarnishItem(GameObject garnishItemPrefab)
-    {
-        GarnishItem garnishItem = GameObject.Instantiate(garnishItemPrefab, GetHoldPoint()).GetComponent<GarnishItem>();
-        SetGarnishItem(garnishItem);
-    }
+    
 
 }

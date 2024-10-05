@@ -24,9 +24,9 @@ public class Player : GarnishItemHolder
 
     private void Start() 
     {
-        gameInput.OnInteractAction += GameInput_OnInteractAction;    
+        gameInput.OnInteractAction += GameInput_OnInteractAction;
+        gameInput.OnOperateAction += GameInput_OnOperateAction;
     }
-
 
     private void Update() 
     {
@@ -49,6 +49,11 @@ public class Player : GarnishItemHolder
     private void GameInput_OnInteractAction(object sender, EventArgs e)
     {
         selectedCounter?.Interact(this);
+    }
+
+    private void GameInput_OnOperateAction(object sender, EventArgs f)
+    {
+        selectedCounter?.InteractOperate(this);
     }
 
     private void HandleMovement()

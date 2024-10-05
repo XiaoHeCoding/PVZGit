@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class ContainerCounterVisual : MonoBehaviour
+public class ContainerAnim : MonoBehaviour
 {
     private Animator anim;
     

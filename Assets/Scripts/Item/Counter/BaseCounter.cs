@@ -13,6 +13,11 @@ public class BaseCounter : GarnishItemHolder
         Debug.LogWarning("交互方法没有重写.");
     }
 
+    public virtual void InteractOperate(Player player)
+    {
+
+    }
+
     public void SelectCounter()
     {
         selectedCounter.SetActive(true);
@@ -22,6 +27,7 @@ public class BaseCounter : GarnishItemHolder
     {
         selectedCounter.SetActive(false);
     }
+
 
 
 }

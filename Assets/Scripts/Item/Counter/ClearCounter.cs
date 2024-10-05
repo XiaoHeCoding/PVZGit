@@ -6,8 +6,6 @@ using UnityEngine;
 public class ClearCounter : BaseCounter
 {
     
-
-
     public override void Interact(Player player)
     {
         //玩家身上有食材

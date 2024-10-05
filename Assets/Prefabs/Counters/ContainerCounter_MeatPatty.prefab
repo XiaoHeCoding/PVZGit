@@ -17,7 +17,7 @@ PrefabInstance:
     - target: {fileID: 4218873261657263236, guid: e83dc785ceab0ad42a8b74856fedd5b6,
         type: 3}
       propertyPath: m_Name
-      value: ContainerCounter_MeatPatty Variant
+      value: ContainerCounter_MeatPatty
       objectReference: {fileID: 0}
     - target: {fileID: 5052098953247454298, guid: e83dc785ceab0ad42a8b74856fedd5b6,
         type: 3}
@@ -27,7 +27,7 @@ PrefabInstance:
     - target: {fileID: 5052098953247454298, guid: e83dc785ceab0ad42a8b74856fedd5b6,
         type: 3}
       propertyPath: m_LocalPosition.y
-      value: -1.237603
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 5052098953247454298, guid: e83dc785ceab0ad42a8b74856fedd5b6,
         type: 3}

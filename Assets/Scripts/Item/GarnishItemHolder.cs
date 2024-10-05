@@ -59,4 +59,17 @@ public class GarnishItemHolder : MonoBehaviour
         this.garnishItem = null;
     }
 
+    public void CreatGarnishItem(GameObject garnishItemPrefab)
+    {
+        GarnishItem garnishItem = GameObject.Instantiate(garnishItemPrefab, GetHoldPoint()).GetComponent<GarnishItem>();
+        SetGarnishItem(garnishItem);
+    }
+
+    public void DestroyGarnishItem()
+    {
+
+        Destroy(garnishItem.gameObject);
+        ClearGarnishItem();
+    }
+
 }

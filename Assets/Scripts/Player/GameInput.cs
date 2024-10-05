@@ -12,6 +12,7 @@ public class GameInput : MonoBehaviour
 
     private GameControl gameControl;
     public event EventHandler OnInteractAction;
+    public event EventHandler OnOperateAction;
 
     private void Awake() 
     {
@@ -19,6 +20,12 @@ public class GameInput : MonoBehaviour
         gameControl.Player.Enable();
 
         gameControl.Player.Interact.performed += Interact_Performed;
+        gameControl.Player.Operate.performed += Operate_Performed;
+    }
+
+    private void Operate_Performed(InputAction.CallbackContext obj)
+    {
+        OnOperateAction?.Invoke(this, EventArgs.Empty);
     }
 
     private void Interact_Performed(UnityEngine.InputSystem.InputAction.CallbackContext obj)
